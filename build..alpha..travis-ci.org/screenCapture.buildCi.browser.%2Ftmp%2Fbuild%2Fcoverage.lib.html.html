@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-connect-multiparty/connect-multiparty/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-connect-multiparty/node_modules/connect-multiparty/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-connect-multiparty">npmtest-connect-multiparty (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-connect-multiparty/connect-multiparty/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-connect-multiparty/node_modules/connect-multiparty/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">11.32% <small>(6 / 53)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-connect-multiparty/connect-multiparty/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-connect-multiparty/node_modules/connect-multiparty/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -477,87 +475,88 @@ var typeis = require('type-is');
  * @api public
  */
 &nbsp;
-exports = module.exports = <span class="fstat-no" title="function not covered" >function(options){</span>
-<span class="cstat-no" title="statement not covered" >  options = options || {};</span>
+exports = module.exports = <span class="fstat-no" title="function not covered">function(options){</span>
+<span class="cstat-no" title="statement not covered">  options = options || {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >function multipart(req, res, next) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (req._body) <span class="cstat-no" title="statement not covered" >return next();</span></span>
-<span class="cstat-no" title="statement not covered" >    req.body = req.body || {};</span>
-<span class="cstat-no" title="statement not covered" >    req.files = req.files || {};</span>
+<span class="cstat-no" title="statement not covered">  return <span class="fstat-no" title="function not covered">function multipart(req, res, next) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (req._body) <span class="cstat-no" title="statement not covered">return next();</span></span>
+<span class="cstat-no" title="statement not covered">    req.body = req.body || {};</span>
+<span class="cstat-no" title="statement not covered">    req.files = req.files || {};</span>
 &nbsp;
     // ignore GET
-<span class="cstat-no" title="statement not covered" >    if ('GET' === req.method || 'HEAD' === req.method) <span class="cstat-no" title="statement not covered" >return next();</span></span>
+<span class="cstat-no" title="statement not covered">    if ('GET' === req.method || 'HEAD' === req.method) <span class="cstat-no" title="statement not covered">return next();</span></span>
 &nbsp;
     // check Content-Type
-<span class="cstat-no" title="statement not covered" >    if (!typeis(req, 'multipart/form-data')) <span class="cstat-no" title="statement not covered" >return next();</span></span>
+<span class="cstat-no" title="statement not covered">    if (!typeis(req, 'multipart/form-data')) <span class="cstat-no" title="statement not covered">return next();</span></span>
 &nbsp;
     // flag as parsed
-<span class="cstat-no" title="statement not covered" >    req._body = true;</span>
+<span class="cstat-no" title="statement not covered">    req._body = true;</span>
 &nbsp;
     // parse
-<span class="cstat-no" title="statement not covered" >    var form = new multiparty.Form(options);</span>
-<span class="cstat-no" title="statement not covered" >    var data = {};</span>
-<span class="cstat-no" title="statement not covered" >    var files = {};</span>
-<span class="cstat-no" title="statement not covered" >    var done = false;</span>
+<span class="cstat-no" title="statement not covered">    var form = new multiparty.Form(options);</span>
+<span class="cstat-no" title="statement not covered">    var data = {};</span>
+<span class="cstat-no" title="statement not covered">    var files = {};</span>
+<span class="cstat-no" title="statement not covered">    var done = false;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function ondata(name, val, data){</span>
-<span class="cstat-no" title="statement not covered" >      if (Array.isArray(data[name])) {</span>
-<span class="cstat-no" title="statement not covered" >        data[name].push(val);</span>
-      } else <span class="cstat-no" title="statement not covered" >if (data[name]) {</span>
-<span class="cstat-no" title="statement not covered" >        data[name] = [data[name], val];</span>
+<span class="fstat-no" title="function not covered">    function ondata(name, val, data){</span>
+<span class="cstat-no" title="statement not covered">      if (Array.isArray(data[name])) {</span>
+<span class="cstat-no" title="statement not covered">        data[name].push(val);</span>
+      } else <span class="cstat-no" title="statement not covered">if (data[name]) {</span>
+<span class="cstat-no" title="statement not covered">        data[name] = [data[name], val];</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        data[name] = val;</span>
+<span class="cstat-no" title="statement not covered">        data[name] = val;</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    form.on('field', <span class="fstat-no" title="function not covered" >function(name, val){</span></span>
-<span class="cstat-no" title="statement not covered" >      ondata(name, val, data);</span>
+<span class="cstat-no" title="statement not covered">    form.on('field', <span class="fstat-no" title="function not covered">function(name, val){</span></span>
+<span class="cstat-no" title="statement not covered">      ondata(name, val, data);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    form.on('file', <span class="fstat-no" title="function not covered" >function(name, val){</span></span>
-<span class="cstat-no" title="statement not covered" >      val.name = val.originalFilename;</span>
-<span class="cstat-no" title="statement not covered" >      val.type = val.headers['content-type'] || null;</span>
-<span class="cstat-no" title="statement not covered" >      ondata(name, val, files);</span>
+<span class="cstat-no" title="statement not covered">    form.on('file', <span class="fstat-no" title="function not covered">function(name, val){</span></span>
+<span class="cstat-no" title="statement not covered">      val.name = val.originalFilename;</span>
+<span class="cstat-no" title="statement not covered">      val.type = val.headers['content-type'] || null;</span>
+<span class="cstat-no" title="statement not covered">      ondata(name, val, files);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    form.on('error', <span class="fstat-no" title="function not covered" >function(err){</span></span>
-<span class="cstat-no" title="statement not covered" >      if (done) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered">    form.on('error', <span class="fstat-no" title="function not covered">function(err){</span></span>
+<span class="cstat-no" title="statement not covered">      if (done) <span class="cstat-no" title="statement not covered">return;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      done = true;</span>
-<span class="cstat-no" title="statement not covered" >      err.status = 400;</span>
+<span class="cstat-no" title="statement not covered">      done = true;</span>
+<span class="cstat-no" title="statement not covered">      err.status = 400;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!req.readable) <span class="cstat-no" title="statement not covered" >return next(err);</span></span>
+<span class="cstat-no" title="statement not covered">      if (!req.readable) <span class="cstat-no" title="statement not covered">return next(err);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      req.resume();</span>
-<span class="cstat-no" title="statement not covered" >      onFinished(req, <span class="fstat-no" title="function not covered" >function(){</span></span>
-<span class="cstat-no" title="statement not covered" >        next(err);</span>
+<span class="cstat-no" title="statement not covered">      req.resume();</span>
+<span class="cstat-no" title="statement not covered">      onFinished(req, <span class="fstat-no" title="function not covered">function(){</span></span>
+<span class="cstat-no" title="statement not covered">        next(err);</span>
       });
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    form.on('close', <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (done) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered">    form.on('close', <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">      if (done) <span class="cstat-no" title="statement not covered">return;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      done = true;</span>
+<span class="cstat-no" title="statement not covered">      done = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        req.body = qs.parse(data);</span>
-<span class="cstat-no" title="statement not covered" >        req.files = qs.parse(files);</span>
-<span class="cstat-no" title="statement not covered" >        next();</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        req.body = qs.parse(data);</span>
+<span class="cstat-no" title="statement not covered">        req.files = qs.parse(files);</span>
+<span class="cstat-no" title="statement not covered">        next();</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        err.status = 400;</span>
-<span class="cstat-no" title="statement not covered" >        next(err);</span>
+<span class="cstat-no" title="statement not covered">        err.status = 400;</span>
+<span class="cstat-no" title="statement not covered">        next(err);</span>
       }
     });
     
-<span class="cstat-no" title="statement not covered" >    form.parse(req);</span>
+<span class="cstat-no" title="statement not covered">    form.parse(req);</span>
   }
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 12 2017 00:48:25 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 18:22:13 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
