@@ -1,6 +1,6 @@
 # npmtest-connect-multiparty
 
-#### test coverage for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmtest-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-multiparty.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-multiparty)
+#### basic test coverage for  [connect-multiparty (v2.0.0)](https://github.com/andrewrk/connect-multiparty)  [![npm package](https://img.shields.io/npm/v/npmtest-connect-multiparty.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-multiparty) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-multiparty.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-multiparty)
 
 #### multipart parsing middleware for connect using multiparty
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-connect-multiparty/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-connect-multiparty/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-connect-multiparty/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-connect-multiparty/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-connect-multiparty/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-connect-multiparty/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-connect-multiparty/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-connect-multiparty/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-connect-multiparty/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-connect-multiparty/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-connect-multiparty/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-connect-multiparty/build/coverage.html/index.html)
 
@@ -83,7 +83,8 @@
     "scripts": {
         "test": "mocha --reporter spec test/*.js"
     },
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
 
